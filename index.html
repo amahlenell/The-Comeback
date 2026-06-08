@@ -529,7 +529,7 @@
     const score = document.querySelector("#score");
     const bestieResult = document.querySelector("#bestieResult");
     const colors = ["#f04b7f", "#f5ba38", "#55d0a5", "#4472ff", "#ffffff", "#171318"];
-    const loadingLines = ["Verifying credentials...", "Approval granted."];
+    
 
     function wait(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
@@ -583,14 +583,9 @@
     openButton.addEventListener("click", async () => {
       openButton.disabled = true;
       giftScene.classList.add("opening");
-      loadingText.style.display = "block";
-      loadingText.textContent = loadingLines[0];
       burstConfetti(96);
 
-      await wait(900);
-      loadingText.textContent = loadingLines[1];
-      await wait(900);
-
+      await wait(1800);
       intro.classList.add("hidden");
       openCard(reveal);
       burstConfetti(90, window.innerWidth / 2, window.innerHeight * 0.32);
